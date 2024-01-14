@@ -31,6 +31,7 @@ const SignaturePad: FC = () => {
 
   const handleClearCanvas = () => {
     signatureRef.current?.clear();
+    setCanvasIsEmpty(true)
   };
 
   const handleSaveCanvas = () => {
@@ -55,7 +56,6 @@ const SignaturePad: FC = () => {
       fontFamily: fonts[0],
       text: ''
     })
-    setCanvasIsEmpty(true)
     setOpen(false);
   };
 
