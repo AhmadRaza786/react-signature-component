@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Marck Script';
+  src: url('./assets//fonts/MarckScript-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Meddon';
+  src: url('./assets//fonts/Meddon-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
