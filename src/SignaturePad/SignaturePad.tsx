@@ -22,7 +22,7 @@ const SignaturePad: FC = () => {
 
   const handleTabChange = (newValue: number) => {
     setTabValue(newValue);
-    signatureRef.current?.clear();
+    handleClearCanvas();
     setSignatureTypeInfo({
       ...signatureTypeInfo,
       text: ''
