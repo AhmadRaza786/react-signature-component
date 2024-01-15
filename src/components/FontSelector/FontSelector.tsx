@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { FontsContainer, FontOption, FontSelectionContainer, FontSelection } from "./fontSelector.styled";
 import { fonts } from '../../utils/constants';
 
-interface FontSelectorProps {
+export interface FontSelectorProps {
   fontFamily: string;
   setFontFamily: (color: string) => void
 }

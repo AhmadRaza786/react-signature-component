@@ -1,14 +1,14 @@
-import { FC, ReactNode } from 'react';
+import React from 'react';
 import { ModalOverlay, ModalContent, NavBar, Title, ModalBody, Bar, CloseButton, SubmitButton } from './modal.styled';
 
-interface ModalProps {
+export interface ModalProps {
   open: boolean;
   onClose: () => void;
   onSubmit?: () => void;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
-const Modal: FC<ModalProps> = ({ open, onClose, onSubmit, children }) => {
+const Modal: React.FC<ModalProps> = ({ open, onClose, onSubmit, children }) => {
   return (
     <ModalOverlay open={open}>
       <ModalContent>

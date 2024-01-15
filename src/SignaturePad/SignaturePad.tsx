@@ -1,19 +1,23 @@
-import { useState, useRef, useEffect, FC } from 'react';
+import React, { useState, useRef, useEffect, FC } from 'react';
 import Tabs from '../components/Tabs/Tabs';
 import Modal from '../components/Modal/Modal';
 import TabPanel from '../components/TabPanel/TabPanel';
 import SignatureDraw from '../Signature/SignatureDraw';
 import SignatureType, { SignatureTypeInfo } from '../Signature/SignatureType';
-import { Container, SignContainer, SignTextContainer, SignText, SignatureImage, TypeSignature } from './signaturePad.styled';
+import { Container } from './signaturePad.styled';
 import { colors, fonts } from '../utils/constants';
 
-const SignaturePad: FC = () => {
+export interface SignaturePadProps {
+  showSignatureModal: boolean
+  onClose: () => void
+  setSignature: (data: string | SignatureTypeInfo) => void
+}
+
+const SignaturePad: FC<SignaturePadProps> = ({ showSignatureModal, onClose, setSignature }: SignaturePadProps) => {
   const signatureRef = useRef<any>(null);
   const [canvasIsEmpty, setCanvasIsEmpty] = useState(true)
-  const [open, setOpen] = useState(false);
   const [tabValue, setTabValue] = useState<number>(0);
-  const [selectedColor, setSelectedColor] = useState<string>('#000000');
-  const [signature, setSignature] = useState<string | SignatureTypeInfo | undefined>();
+  const [selectedColor, setSelectedColor] = useState<string>(colors[0]);
   const [signatureTypeInfo, setSignatureTypeInfo] = useState<SignatureTypeInfo>({
     color: colors[0],
     fontFamily: fonts[0],
@@ -56,7 +60,7 @@ const SignaturePad: FC = () => {
       fontFamily: fonts[0],
       text: ''
     })
-    setOpen(false);
+    onClose();
   };
 
   useEffect(() => {
@@ -78,29 +82,9 @@ const SignaturePad: FC = () => {
     }
   }
 
-  const renderSignature = () => {
-    if(signature) {
-      if(typeof signature === 'string') {
-        return <SignatureImage src={signature} alt="" />
-      }
-      return (
-        <TypeSignature style={{ color: signature.color, fontFamily: signature.fontFamily }}>
-          <span>{signature.text}</span>
-        </TypeSignature>
-      )
-    }
-    return null
-  }
-
   return (
     <Container>
-      <SignContainer onClick={() => setOpen(true)}>
-        <SignTextContainer>
-          {(!signature) && <SignText>Sign</SignText>}
-          {renderSignature()}
-        </SignTextContainer>
-      </SignContainer>
-      <Modal open={open} onClose={handleClose} onSubmit={handleSave}>
+      <Modal open={showSignatureModal} onClose={handleClose} onSubmit={handleSave}>
         <Tabs tabValue={tabValue} onChange={handleTabChange} />
         <TabPanel value={tabValue} index={0}>
           <SignatureDraw 

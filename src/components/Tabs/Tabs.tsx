@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { TabItem, TabsContainer } from './tabs.styled';
 import { SignatureTypes } from '../../utils/enums';
 
-interface TabProps {
+export interface TabProps {
   tabValue: number;
   onChange: (tab: number) => void
 }

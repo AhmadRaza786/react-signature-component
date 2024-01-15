@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledTabPanel } from './tabPanel.styled';
 
-interface TabPanelProps {
+export interface TabPanelProps {
   value: number;
   index: number;
   children?: React.ReactNode;

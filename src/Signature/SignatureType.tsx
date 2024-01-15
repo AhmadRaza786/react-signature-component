@@ -1,5 +1,5 @@
 import Colors from "../components/Colors/Colors"
-import { FC } from 'react';
+import React, { FC } from 'react';
 import FontsGrid from "../components/FontSelector/FontSelector";
 import { SignatureTypeContainer, Input, ClearSignature, SignLabel } from "./signature.styled";
 
@@ -9,7 +9,7 @@ export type SignatureTypeInfo = {
   text?: string
 }
 
-interface SignatureTypeProps {
+export interface SignatureTypeProps {
   signatureInfo: SignatureTypeInfo;
   setSignatureInfo: (info: SignatureTypeInfo) => void
 }

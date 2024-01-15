@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { ColorsContainer, ColorItemContainer, ColorItem } from './colors.styled';
 import { colors } from '../../utils/constants';
 
-interface TabProps {
+export interface TabProps {
   selectedColor?: string
   onChange: (selectedColor: string) => void
 }

@@ -1,9 +1,9 @@
 import SignatureCanvas from 'react-signature-canvas';
 import Colors from "../components/Colors/Colors"
-import { FC, RefObject } from 'react';
+import React, { FC, RefObject } from 'react';
 import { ClearSignature, SignLabel, SignatureCanvasContainer } from './signature.styled';
 
-interface SignatureDrawProps {
+export interface SignatureDrawProps {
   selectedColor: string;
   setSelectedColor: (color: string) => void
   signatureRef: RefObject<SignatureCanvas>
