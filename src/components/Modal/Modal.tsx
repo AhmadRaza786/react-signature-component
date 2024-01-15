@@ -8,7 +8,11 @@ export interface ModalProps {
   children: React.ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({ open, onClose, onSubmit, children }) => {
+/**
+ * Component to render the Popup Modal
+ * @param {ModalProps} 
+ */
+const Modal: React.FC<ModalProps> = ({ open, onClose, onSubmit, children }: ModalProps) => {
   return (
     <ModalOverlay open={open}>
       <ModalContent>

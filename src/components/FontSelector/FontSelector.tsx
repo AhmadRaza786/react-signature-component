@@ -7,6 +7,11 @@ export interface FontSelectorProps {
   setFontFamily: (color: string) => void
 }
 
+/**
+ * Component to render the different font families and do the relevant selection
+ * @param {FontSelectorProps} 
+ * @returns 
+ */
 const FontSelector: FC<FontSelectorProps> = ({ fontFamily, setFontFamily }: FontSelectorProps) => {
   return (
       <FontsContainer>

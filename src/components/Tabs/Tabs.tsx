@@ -7,6 +7,10 @@ export interface TabProps {
   onChange: (tab: number) => void
 }
 
+/**
+ * Component that renders the Tabs
+ * @param {TabProps} 
+ */
 const Tabs: FC<TabProps> = ({ tabValue, onChange}: TabProps) => {
   return (
     <TabsContainer>

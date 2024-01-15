@@ -1,12 +1,16 @@
 import React, { FC } from "react"
 import { SignatureTypeInfo } from "../../Signature/SignatureType"
-import { SignatureImage, TypeSignature, SignText, SignContainer, SignTextContainer } from "../../SignaturePad/signaturePad.styled"
+import { SignatureImage, TypeSignature, SignText, SignContainer, SignTextContainer } from "./signatureInput.styled"
 
 export interface SignatureInputProps {
   signature: string | SignatureTypeInfo | undefined
   setShowSignatureModal: () => void
 }
 
+/**
+ * Component that renders the Signature Input
+ * @param {SignatureInputProps} 
+ */
 const SignatureInput: FC<SignatureInputProps> = ({ signature, setShowSignatureModal }: SignatureInputProps) => {
   const renderSignature = () => {
     if(signature) {

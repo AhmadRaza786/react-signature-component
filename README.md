@@ -15,7 +15,7 @@ yarn add react-signature-component
 ### Usage
 
 ```
-import { SignaturePad, SignatureTypeInfo, SignatureInput,  } from 'react-signature-component';
+import { SignaturePad, SignatureTypeInfo, SignatureInput } from 'react-signature-component';
 
 const YourComponentName = () => {
   const [signature, setSignature] = useState<string | SignatureTypeInfo | undefined>();

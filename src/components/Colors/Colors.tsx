@@ -2,12 +2,16 @@ import React, { FC } from 'react';
 import { ColorsContainer, ColorItemContainer, ColorItem } from './colors.styled';
 import { colors } from '../../utils/constants';
 
-export interface TabProps {
+export interface ColorsProps {
   selectedColor?: string
   onChange: (selectedColor: string) => void
 }
 
-const Colors: FC<TabProps> = ({ selectedColor,  onChange }: TabProps) => {
+/**
+ * Component that renders the colors
+ * @param {ColorsProps} 
+ */
+const Colors: FC<ColorsProps> = ({ selectedColor,  onChange }: ColorsProps) => {
   return (
     <ColorsContainer>
       {colors.map(colorItem => 

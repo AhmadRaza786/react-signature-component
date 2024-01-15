@@ -7,6 +7,10 @@ export interface TabPanelProps {
   children?: React.ReactNode;
 }
 
+/**
+ * Component that renders the Tab Panel
+ * @param {TabPanelProps} 
+ */
 const TabPanel: React.FC<TabPanelProps> = ({ value, index, children }) => {
   const isActive = value === index;
 

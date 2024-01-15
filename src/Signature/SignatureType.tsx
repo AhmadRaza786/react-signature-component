@@ -14,6 +14,10 @@ export interface SignatureTypeProps {
   setSignatureInfo: (info: SignatureTypeInfo) => void
 }
 
+/**
+ * Component that renders the Signature Type Input and allow to select colors and font family
+ * @param {SignatureTypeProps} 
+ */
 const SignatureType: FC<SignatureTypeProps> = ({ signatureInfo, setSignatureInfo }: SignatureTypeProps) => {
   const handleChangeInfo = (info: Partial<SignatureTypeInfo>) => {
     setSignatureInfo({

@@ -1,8 +1,14 @@
 {
   "name": "react-signature-component",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "description": "Digital Signature component",
-  "keywords": ["react", "react-signature", "react signature", "signature", "canvas-signature"],
+  "keywords": [
+    "react",
+    "react-signature",
+    "react signature",
+    "signature",
+    "canvas-signature"
+  ],
   "main": "dist/index.js",
   "author": "Ahmad Raza <vision.ahmad@gmail.com>",
   "dependencies": {
@@ -31,7 +37,8 @@
     "eject": "react-scripts eject",
     "clean": "rimraf dist",
     "build": "npm run clean && tsc",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "publish": "npm publish"
   },
   "eslintConfig": {
     "extends": [

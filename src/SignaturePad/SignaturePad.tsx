@@ -13,6 +13,10 @@ export interface SignaturePadProps {
   setSignature: (data: string | SignatureTypeInfo) => void
 }
 
+/**
+ * Component to render the SignaturePad including draw and type features
+ * @param {SignaturePadProps} 
+ */
 const SignaturePad: FC<SignaturePadProps> = ({ showSignatureModal, onClose, setSignature }: SignaturePadProps) => {
   const signatureRef = useRef<any>(null);
   const [canvasIsEmpty, setCanvasIsEmpty] = useState(true)
@@ -24,8 +28,12 @@ const SignaturePad: FC<SignaturePadProps> = ({ showSignatureModal, onClose, setS
     text: ''
   })
 
-  const handleTabChange = (newValue: number) => {
-    setTabValue(newValue);
+  /**
+   * Function that renders on tab change
+   * @param {number} value 
+   */
+  const handleTabChange = (value: number) => {
+    setTabValue(value);
     handleClearCanvas();
     setSignatureTypeInfo({
       ...signatureTypeInfo,
@@ -33,11 +41,17 @@ const SignaturePad: FC<SignaturePadProps> = ({ showSignatureModal, onClose, setS
     })
   };
 
+  /**
+   * Function to clear the canvas
+   */
   const handleClearCanvas = () => {
     signatureRef.current?.clear();
     setCanvasIsEmpty(true)
   };
 
+  /**
+   * Function to save the drawing on canvas
+   */
   const handleSaveCanvas = () => {
     if (!signatureRef.current.isEmpty()) {
       const signatureData = signatureRef.current?.toDataURL();
@@ -46,6 +60,9 @@ const SignaturePad: FC<SignaturePadProps> = ({ showSignatureModal, onClose, setS
     }
   };
 
+  /**
+   * Function to save the text signature
+   */
   const handleTextSave = () => {
     if(signatureTypeInfo.text) {
       setSignature(signatureTypeInfo)
@@ -53,6 +70,9 @@ const SignaturePad: FC<SignaturePadProps> = ({ showSignatureModal, onClose, setS
     }
   };
 
+  /**
+   * Function to close the modal and reset the state
+   */
   const handleClose = () => {
     handleClearCanvas();
     setSignatureTypeInfo({
@@ -63,12 +83,18 @@ const SignaturePad: FC<SignaturePadProps> = ({ showSignatureModal, onClose, setS
     onClose();
   };
 
+  /**
+   * Triggeres on tab change to Draw and make sure that it has reset the canvas
+   */
   useEffect(() => {
     if (tabValue === 0) {
       signatureRef.current?.fromData([]);
     }
   }, [tabValue]);
 
+  /**
+   * Save callaback to save signature either draw or type
+   */
   const handleSave = () => {
     switch (tabValue) {
       case 0:

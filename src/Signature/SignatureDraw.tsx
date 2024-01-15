@@ -11,6 +11,11 @@ export interface SignatureDrawProps {
   setCanvasIsEmpty: (value: boolean) => void
 }
 
+/**
+ * Component that renders the Canvas to draw the signature
+ * @param {SignatureDrawProps} 
+ * @returns 
+ */
 const SignatureDraw: FC<SignatureDrawProps> = ({ 
   selectedColor, 
   setSelectedColor, 
