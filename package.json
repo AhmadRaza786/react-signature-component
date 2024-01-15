@@ -1,7 +1,10 @@
 {
   "name": "react-signature-component",
-  "version": "0.1.0",
+  "version": "0.1.2",
+  "description": "Digital Signature component",
+  "keywords": ["react", "react-signature", "react signature", "signature", "canvas-signature"],
   "main": "dist/index.js",
+  "author": "Ahmad Raza <vision.ahmad@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
